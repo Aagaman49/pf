@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact form</title>
+
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+<div class="container">
+	<form onsubmit="sendEmail(); reset(); return false;">
+		<h3>HIRE ME</h3>
+		<input type="text" id="name" placeholder="Your Name" required>
+		<input type="email" id="email" placeholder="Your Email" required>
+		<input type="text"id="phone" placeholder="Your Phone-No" required>
+		<textarea id="message" rows="4 " placeholder="Your Detailed Project Explaination"></textarea>
+		<button type="submit">Send</button></a>
+		
+		
+	</form>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+				function sendEmail(){
+				Email.send({
+			    Host : "smtp.elasticemail.com",
+			    Username : "aagamanpoudel255@gmail.com",
+			    Password : "9FC89C66B28265220E39194AADB98572C35E",
+			    To : 'kattelanshu@gmail.com',
+			    From : document.getElementById("email").value,
+			    Subject : "New Form Submission",
+			    Body : "Name: "+ getElementById("name").value
+			    + "<br> Email: "+ document.getElementById("email").value
+			    + "<br> Ph-No: "+ document.getElementById("phone").value
+			    + "<br> Message: "+ document.getElementById("message").value
+
+			}).then(
+			  message => alert(message)
+			);
+			}
+</script>
+</body>
+</html>
